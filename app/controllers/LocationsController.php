@@ -47,9 +47,15 @@ class LocationsController extends \BaseController {
 
 			}else{
 
-				$location = Location::getSingleLocation($location_id)->get();
+				$location = Location::find($location_id);
 
-				return Response::json($location);
+				$menu = Menu::all();
+
+				$menu = $menu->toArray();
+
+				//var_dump($menu[0]["menu"]);
+
+				return Response::json( stripslashes($menu[0]["menu"]));
 
 			}
 	}

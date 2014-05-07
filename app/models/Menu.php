@@ -10,4 +10,6 @@ class Menu extends \Eloquent {
 	protected $table = 'menus';
 	public $timestamps = false;
 
+	
+
 }
