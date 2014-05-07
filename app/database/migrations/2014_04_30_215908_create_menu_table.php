@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateFactsTable extends Migration {
+class CreateMenuTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,10 @@ class CreateFactsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('facts', function(Blueprint $table) {
+		Schema::create('menus', function(Blueprint $table) {
 			$table->increments('id');
-			$table->text('fact');
-			//$table->timestamps();
+			$table->integer('locations_id');
+			$table->text('menu');
 		});
 	}
 
@@ -27,7 +27,7 @@ class CreateFactsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('facts');
+		Schema::drop('menus');
 	}
 
 }

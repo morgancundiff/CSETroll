@@ -18,6 +18,9 @@ class DatabaseSeeder extends Seeder {
 		$this->call('SentryUserSeeder');
 		$this->call('SentryUserGroupSeeder');
 		$this->call('FactsSeeder');
+		$this->call('LocationsTableSeeder');
+		$this->call('MenuTableSeeder');
+		
 	}
 
 }

@@ -17,10 +17,10 @@ class CreateLocationTable extends Migration {
 			$table->increments('id');
 			$table->string('location_name');
 			$table->string('address');
-			$table->float('lat');
-			$table->float('lng');
-			$table->timestamps();
-
+			$table->float('lat', 10, 6);
+			$table->float('lng', 10 ,6);
+			$table->text('hours');
+			$table->integer('menus_id');
 		});
 	}
 
@@ -32,7 +32,7 @@ class CreateLocationTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('location');
+		Schema::drop('locations');
 	}
 
 }

@@ -34,7 +34,7 @@ Route::get('/joel', function()
 });
 
 
-Route::get('/get/locations', 'HomeController@goodbye');
+Route::get('/get/locations', 'LocationsController@getAllLocations');
 
 //Route::get('/get/locations/{single_location}', 'HomeController@goodbye');
 
@@ -50,23 +50,25 @@ Route::get('/get/locations', 'HomeController@goodbye');
 
 Route::any('/user/check/{username}', 'UserController@checkUsername');
 
-Route::any('/user/check/login', 'UserController@checkIfLoggedIn');
+Route::any('/user/login/check', 'UserController@checkIfLoggedIn');
 
-Route::any('/user/login', 'UserController@logInUser');
+Route::any('/user/login', 'UserController@loginMobile');
 
 Route::any('/user/create', 'UserController@createMobileUser');
 
 Route::any('/user/update', 'UserController@updateMobileUser');
 
-Route::any('/user/create/favorites', 'UserController@logInUser');
+Route::any('/user/delete', 'UserController@deleteMobileUser');
 
-Route::any('/user/update/favorites', 'UserController@logInUser');
+Route::any('/user/create/favorites', 'FavoritesController@logInUser');
+
+Route::any('/user/update/favorites', 'UserController@scopeLoginMobile');
 
 //Route::any('/user/favorites', 'UserController@logInUser');
 
 Route::any('/user/recover', 'UserController@resetPassword');
 
-Route::any('/user/login', 'UserController@loginUser');
+//Route::any('/user/login', 'UserController@loginUser');
 
 
 /*
