@@ -47,9 +47,9 @@ class LocationsController extends \BaseController {
 
 			}else{
 
-				$location = Location::find($location_id)->toArray();
+				$location = Location::find($location_id);
 
-				//$location = $location["menus_id"];
+				if($location){
 
 				$menu = Menu::all();
 
@@ -61,7 +61,12 @@ class LocationsController extends \BaseController {
 
 				//var_dump($menu[0]["menu"]);
 
-				return Response::json(array("locations" => $location, "menu" => $menu[0]["menu"]));
+				return Response::json(array("locations" => $location->toArray(), "menu" => $menu[0]["menu"]));
+
+			}else{
+
+				return Response::json(Lang::get('api.location.error.invalid_id'));
+			}
 
 			}
 	}

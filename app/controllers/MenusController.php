@@ -12,68 +12,30 @@ class MenusController extends \BaseController {
 		//
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
+	public function getSingleMenu($menu_id){
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
+		if ( ! Input::has('api_key') || (Input::get('api_key') !== Config::get('app.internalApiKey'))){
+				//this checks that an API KEY is passed and valid
+				return Response::json(Lang::get('api.user.error.unknown_api'));
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
+			}else{
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
+					//get the menu for the specific id
+					$menu = Menu::find($menu_id);
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
+					if($menu){
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
+
+					//do error check if you ask for something that is not there
+					return Response::json($menu->toArray());
+
+				}else{
+
+					return Response::json(Lang::get('api.menu.error.invalid_id'));
+
+				}
+			}
+
 	}
 
 }

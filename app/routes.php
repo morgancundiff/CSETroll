@@ -13,6 +13,7 @@
 
 /*Pattern description*/
 Route::pattern('location_id', '[0-9]+');
+Route::pattern('menu_id', '[0-9]+');
 Route::pattern('id', '\d+');
 Route::pattern('hash', '[a-z0-9]+');
 Route::pattern('hex', '[a-f0-9]+');
@@ -34,7 +35,7 @@ Route::get('/joel', function()
 });
 
 
-Route::get('/get/locations', 'LocationsController@getAllLocations');
+//Route::get('/get/locations', 'LocationsController@getAllLocations');
 
 //Route::get('/get/locations/{single_location}', 'HomeController@goodbye');
 
@@ -48,17 +49,17 @@ Route::get('/get/locations', 'LocationsController@getAllLocations');
 |
 */
 
-Route::any('/user/check/{username}', 'UserController@checkUsername');
+Route::any('/user/check/{username}', 'UserController@checkUsername'); //done
 
-Route::any('/user/login/check', 'UserController@checkIfLoggedIn');
+Route::any('/user/login/check', 'UserController@checkIfLoggedIn'); //done
 
-Route::any('/user/login', 'UserController@loginMobile');
+Route::any('/user/login', 'UserController@loginMobile'); //done
 
-Route::any('/user/create', 'UserController@createMobileUser');
+Route::any('/user/create', 'UserController@createMobileUser'); //done
 
-Route::any('/user/update', 'UserController@updateMobileUser');
+Route::any('/user/update', 'UserController@updateMobileUser'); //done
 
-Route::any('/user/delete', 'UserController@deleteMobileUser');
+Route::any('/user/delete', 'UserController@deleteMobileUser'); //done
 
 Route::any('/user/create/favorites', 'FavoritesController@logInUser');
 
@@ -93,12 +94,26 @@ Route::any('/get/fact', 'FactsController@index');
 |
 */
 
-Route::any('/get/locations', 'LocationsController@getAllLocations');
+Route::any('/get/locations', 'LocationsController@getAllLocations'); //done
 
 
-Route::any('/get/locations/{location_id}', 'LocationsController@getSingleLocation');
+Route::any('/get/locations/{location_id}', 'LocationsController@getSingleLocation'); //done
 
 Route::any('/get/locations/nearest', 'LocationsController@getNearestLocation');
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Menu Base Application API Routines
+|--------------------------------------------------------------------------
+|
+| Here is where you can register all of the routes for the location aspect  
+| of the application
+|
+*/
+
+Route::any('/get/menu/{menu_id}', 'MenusController@getSingleMenu');
 
 
 

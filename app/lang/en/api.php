@@ -39,6 +39,19 @@ return array(
 			'user_delete'		=> array("response" => array("result" => "success", "message" => "user deleted successfuly")),
 			),
 	),
+	'menu' => array(
+		'error' => array(
+			'invalid_id'		=>array("response" => array("result" => "fail", "message" => "unknown menu id")),
+			
+			),
+		),
+
+	'location' => array(
+		'error' => array(
+			'invalid_id'		=>array("response" => array("result" => "fail", "message" => "unknown location id")),
+			
+			),
+		),
 
 	/*
 	|--------------------------------------------------------------------------
