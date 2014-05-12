@@ -12,6 +12,11 @@ class MenusController extends \BaseController {
 		//
 	}
 
+	/**
+	 * this function return the menu for a specific id
+	 * @param  [type] $menu_id [description]
+	 * @return [type]          [description]
+	 */
 	public function getSingleMenu($menu_id){
 
 		if ( ! Input::has('api_key') || (Input::get('api_key') !== Config::get('app.internalApiKey'))){
@@ -36,6 +41,18 @@ class MenusController extends \BaseController {
 				}
 			}
 
+	}
+
+
+	public function addRating(){
+
+
+		$menu = Menu::addRating();
+
+		//var_dump($menu_id);
+		return "hello";
+
+		//return Response::json(array("menu_id" => $menu_id, "menu_item" =>$menu_item, "rating" => $rating));
 	}
 
 }

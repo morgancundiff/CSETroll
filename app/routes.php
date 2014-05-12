@@ -14,6 +14,7 @@
 /*Pattern description*/
 Route::pattern('location_id', '[0-9]+');
 Route::pattern('menu_id', '[0-9]+');
+Route::pattern('menu_item', '[0-9]+');
 Route::pattern('id', '\d+');
 Route::pattern('hash', '[a-z0-9]+');
 Route::pattern('hex', '[a-f0-9]+');
@@ -24,14 +25,7 @@ Route::pattern('username', '[a-z0-9_-]{3,16}');
 
 Route::get('/', function()
 {
-	return View::make('hello');
-});
-
-
-
-Route::get('/joel', function()
-{
-	return View::make('goodbye');
+	return Response::json(Lang::get('api.main.bad_call')); //done
 });
 
 
@@ -82,7 +76,7 @@ Route::any('/user/recover', 'UserController@resetPassword');
 |
 */
 
-Route::any('/get/fact', 'FactsController@index');
+Route::any('/get/fact', 'FactsController@index'); //done
 
 /*
 |--------------------------------------------------------------------------
@@ -113,7 +107,9 @@ Route::any('/get/locations/nearest', 'LocationsController@getNearestLocation');
 |
 */
 
-Route::any('/get/menu/{menu_id}', 'MenusController@getSingleMenu');
+Route::any('/get/menu/{menu_id}', 'MenusController@getSingleMenu'); //done
+
+Route::any('/ratings/{menu_id}/{menu_item}/{rating}', 'MenusController@addRating'); //done
 
 
 

@@ -13,7 +13,9 @@ return array(
 	|
 	*/
 
-
+	'main' => array(
+		'bad_call'				=> array("response" => array("result" => "fail")),
+		),
 	'user' => array(
 		'error' => array(
 			'bad_request'		=> array("response" => array("result" => "fail")),
