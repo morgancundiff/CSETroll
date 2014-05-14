@@ -15,8 +15,8 @@ class CreateSizeTable extends Migration {
 		Schema::create('size', function(Blueprint $table) {
 			$table->increments('id');
 			$table->integer('items_id');
-			$table->string('title');
-			$table->integer('price');
+			$table->string('size_title');
+			$table->float('price', 3,2);
 		});
 	}
 

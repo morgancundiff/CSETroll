@@ -3,77 +3,53 @@
 class FavoritesController extends \BaseController {
 
 	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
+	 * create new favorite
 	 */
-	public function index()
+	public function createUserFavorites($item_id)
 	{
-		//
+
+		if ( ! Input::has('api_key') || (Input::get('api_key') !== Config::get('app.internalApiKey'))){
+			//this checks that an API KEY is passed and valid
+			return Response::json(Lang::get('api.user.error.unknown_api'));
+
+		}else if(! Input::has('username')){
+
+			//this checks that an API KEY is passed and valid
+			return Response::json(Lang::get('api.user.error.username'));
+
+		}
+		else{
+
+			$username = e(Input::get('username'));
+
+			return Favorite::createUserFavorites($username, $item_id);
+		}
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
+
 
 	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
+	 * delete new favorite
 	 */
-	public function store()
+	public function deleteUserFavorites($favorite_id)
 	{
-		//
-	}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
+		if ( ! Input::has('api_key') || (Input::get('api_key') !== Config::get('app.internalApiKey'))){
+			//this checks that an API KEY is passed and valid
+			return Response::json(Lang::get('api.user.error.unknown_api'));
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
+		}else if(! Input::has('username')){
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
+			//this checks that an API KEY is passed and valid
+			return Response::json(Lang::get('api.user.error.username'));
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
+		}
+		else{
+
+			$username = e(Input::get('username'));
+
+			return Favorite::deleteUserFavorites($username, $favorite_id);
+		}
 	}
 
 }

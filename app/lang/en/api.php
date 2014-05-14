@@ -55,6 +55,29 @@ return array(
 			),
 		),
 
+	'rating' => array(
+		'error' => array(
+			'fail'				=>array("response" => array("result" => "fail", "message" => "Rating was not logged")),
+			
+			),
+		'valid' => array(
+			'success'			=>array("response" => array("result" => "success", "message" => "Rating was logged")),
+			
+			),
+		),
+
+	'favorite' => array(
+		'error' => array(
+			'fail'				=>array("response" => array("result" => "fail", "message" => "Rating was not logged")),
+			
+			),
+		'valid' => array(
+			'success'			=>array("result" => "success", "message" => "Favorite was Added"),
+			'delete'			=>array("response" => array("result" => "success", "message" => "Favorite delete successfully")),
+			
+			),
+		),
+
 	/*
 	|--------------------------------------------------------------------------
 	| Custom Validation Attributes

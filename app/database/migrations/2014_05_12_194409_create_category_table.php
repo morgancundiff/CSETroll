@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateFavoritesTable extends Migration {
+class CreateCategoryTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,10 @@ class CreateFavoritesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('favorites', function(Blueprint $table) {
+		Schema::create('category', function(Blueprint $table) {
 			$table->increments('id');
-			$table->integer('users_id');
-			$table->integer('items_id');
-			$table->integer('menus_id');
+			//$table->integer('items_id');
+			$table->string('category');
 		});
 	}
 
@@ -28,7 +27,7 @@ class CreateFavoritesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('favorites');
+		Schema::drop('category');
 	}
 
 }

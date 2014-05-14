@@ -16,7 +16,7 @@ class CreateRatingsTable extends Migration {
 			$table->increments('id');
 			$table->integer('items_id');
 			$table->integer('total_votes');
-			$table->integer('rating');
+			$table->float('rating', 4,2);
 		});
 	}
 

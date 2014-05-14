@@ -21,6 +21,11 @@ class DatabaseSeeder extends Seeder {
 		$this->call('LocationsTableSeeder');
 		$this->call('MenuTableSeeder');
 		$this->call('FavoritesTableSeeder');
+		$this->call('ItemsTableSeeder');
+		$this->call('RatingsTableSeeder');
+		$this->call('SizeTableSeeder');
+		$this->call('CategoryTableSeeder');
+
 		
 	}
 

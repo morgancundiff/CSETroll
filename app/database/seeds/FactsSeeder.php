@@ -6,8 +6,7 @@ class FactsSeeder extends Seeder {
         public function run()
         {
 
-        		DB::table('facts')->delete();
-        		   
+        	DB::table('facts')->delete();   
                 DB::table('facts')->insert(
                         array(
                                 array(

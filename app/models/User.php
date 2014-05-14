@@ -304,13 +304,15 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 				$presist_code = array_shift($presist_code);
 
-				$favorites = Favorite::getUserFavorites($user);
+				$favorites = Favorite::getUserFavorites($user->id)->get();
+
+				//var_dump($favorites);
 
 				$responseArray = array(
 					"response"	=> array(
 							"result"		=> "success",
 							"user"			=> $user->toArray(),
-							"favorites" 	=> $favorites,
+							"favorites" 	=> $favorites->toArray(),
 							"presist_code" 	=> Crypt::encrypt($presist_code),
 
 						)

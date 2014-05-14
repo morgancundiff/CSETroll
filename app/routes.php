@@ -47,7 +47,7 @@ Route::any('/user/check/{username}', 'UserController@checkUsername'); //done
 
 Route::any('/user/login/check', 'UserController@checkIfLoggedIn'); //done
 
-Route::any('/user/login', 'UserController@loginMobile'); //done
+Route::any('/user/login', 'UserController@loginMobile'); //done - includes favorites
 
 Route::any('/user/create', 'UserController@createMobileUser'); //done
 
@@ -55,9 +55,9 @@ Route::any('/user/update', 'UserController@updateMobileUser'); //done
 
 Route::any('/user/delete', 'UserController@deleteMobileUser'); //done
 
-Route::any('/user/create/favorites', 'FavoritesController@logInUser');
+Route::any('/user/create/favorites/{item_id}', 'FavoritesController@createUserFavorites'); //done
 
-Route::any('/user/update/favorites', 'UserController@scopeLoginMobile');
+Route::any('/user/delete/favorites/{favorite_id}', 'FavoritesController@deleteUserFavorites'); //done
 
 //Route::any('/user/favorites', 'UserController@logInUser');
 
@@ -109,7 +109,11 @@ Route::any('/get/locations/nearest', 'LocationsController@getNearestLocation');
 
 Route::any('/get/menu/{menu_id}', 'MenusController@getSingleMenu'); //done
 
-Route::any('/ratings/{menu_id}/{menu_item}/{rating}', 'MenusController@addRating'); //done
+Route::any('/ratings/{item_id}/{rating}', 'RatingsController@addRating'); //done - error checking needed
+
+Route::any('/menu/{menu_id}', 'MenusController@getMenu'); //done - need error checking
+
+
 
 
 
