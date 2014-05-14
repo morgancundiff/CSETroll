@@ -29,10 +29,6 @@ Route::get('/', function()
 });
 
 
-//Route::get('/get/locations', 'LocationsController@getAllLocations');
-
-//Route::get('/get/locations/{single_location}', 'HomeController@goodbye');
-
 /*
 |--------------------------------------------------------------------------
 | User Base Application API Routines
@@ -93,7 +89,7 @@ Route::any('/get/locations', 'LocationsController@getAllLocations'); //done
 
 Route::any('/get/locations/{location_id}', 'LocationsController@getSingleLocation'); //done
 
-Route::any('/get/locations/nearest', 'LocationsController@getNearestLocation');
+Route::any('/get/locations/nearest', 'LocationsController@getNearestLocation'); //done
 
 
 

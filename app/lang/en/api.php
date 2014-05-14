@@ -51,6 +51,8 @@ return array(
 	'location' => array(
 		'error' => array(
 			'invalid_id'		=>array("response" => array("result" => "fail", "message" => "unknown location id")),
+			'invalid_lat'		=>array("response" => array("result" => "fail", "message" => "missing latitude")),
+			'invalid_lng'		=>array("response" => array("result" => "fail", "message" => "missing longitude")),
 			
 			),
 		),

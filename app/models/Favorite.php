@@ -101,13 +101,9 @@ WHERE favorites.users_id = 95
 	 */
 	public function scopeDeleteUserFavorites($query, $username, $favorite_id)
 	{
-				// "id" => 1,
-				// "users_id" => 1,
-				// "items_id" => 1,
-				// "menus_id" => 1
+
 		 
 		 //get the user should check if there is
-		 
 		try
 		{
 		 	$user = Sentry::findUserByLogin($username);

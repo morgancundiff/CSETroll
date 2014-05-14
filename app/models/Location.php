@@ -27,27 +27,44 @@ class Location extends \Eloquent {
 		return $locations;
 	}
 
-	private function getLocationMenu($location_id){
-
-		$location = Locations::all()->menu();
-
-	}
-
 	public function scopeGetSingleLocation($query, $location_id){
 
-		$locations = $query->where('id', '=', $location_id);
+		try
+		{
+		 	$location = Location::findOrFail($location_id);
+
+		 	//return $location['menus_id'];
+		 	$menu = Menu::getMenu($location['menus_id'])->get();
+
+		 	return Response::json(
+		 		array(
+		 			"location" => $location->toArray(),
+		 			"menu" => $menu->toArray()
+		 			)
+		 		);
+		}
 		
-		return $locations;
+		catch (Illuminate\Database\Eloquent\ModelNotFoundException $e)
+		{
+			return Response::json(Lang::get('api.location.error.invalid_id'));
+		}
+
 
 	}
 
-	public static function getNearestLocation($args){
+	public static function scopeGetNearestLocation($query, $lat, $lng){
 
-		$lat = 37;
-		$lng = -122;
-		$nearestQuery = 'SELECT id, ( 3959 * acos( cos( radians('. $lat .') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('.$lng.') ) + sin( radians('. $lat .') ) * sin( radians( lat ) ) ) ) AS distance FROM locations HAVING distance < 25 ORDER BY distance LIMIT 0 , 20';
+		//$lat = 37 ;
+		//$lng = -122;
 
+		$radius = 25;
 
-		return array("some shit in here" => $args);
+		$haversine = '( 3959 * acos( cos( radians('. $lat .') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('.$lng.') ) + sin( radians('. $lat .') ) * sin( radians( lat ) ) ) )';
+		
+		$nearestQuery = $query ->select(array('id', DB::raw($haversine . ' as distance') , 'lat', 'lng'))
+		->orderBy('distance', 'asc')
+		->having('distance', '<', $radius);
+
+		return $nearestQuery;
 	}
 }

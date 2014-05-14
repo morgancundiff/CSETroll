@@ -26,9 +26,7 @@ class LocationsController extends \BaseController {
 
 			}else{
 
-				$location = Location::getAllLocations();
-
-				return Response::json($location);
+				return Location::getAllLocations();
 
 			}
 	}
@@ -47,26 +45,7 @@ class LocationsController extends \BaseController {
 
 			}else{
 
-				$location = Location::find($location_id);
-
-				if($location){
-
-				$menu = Menu::all();
-
-				$menu = $menu->toArray();
-
-				//$location["menus_id"] = $menu[0]["menu"];
-
-				//$menu = $menu->toArray();
-
-				//var_dump($menu[0]["menu"]);
-
-				return Response::json(array("locations" => $location->toArray(), "menu" => $menu[0]["menu"]));
-
-			}else{
-
-				return Response::json(Lang::get('api.location.error.invalid_id'));
-			}
+			return Location::getSingleLocation($location_id);
 
 			}
 	}
@@ -81,9 +60,30 @@ class LocationsController extends \BaseController {
 	 */
 	public function getNearestLocation()
 	{
-		$location = Location::getNearestLocation($location_id);
 
-		return Response::json($location);
+		if ( ! Input::has('api_key') || (Input::get('api_key') !== Config::get('app.internalApiKey'))){
+			//this checks that an API KEY is passed and valid
+			return Response::json(Lang::get('api.user.error.unknown_api'));
+
+		}else if(! Input::has('lat')){
+			return Response::json(Lang::get('api.location.error.invalid_lat'));
+		}else if(! Input::has('lng')){
+			return Response::json(Lang::get('api.location.error.invalid_lng'));
+		}
+		else{
+
+				$lat = e(Input::get('lat'));
+				$lng = e(Input::get('lng'));
+			
+				$nearest =  Location::getNearestLocation($lat, $lng)->first();
+
+				//return Location::getSingleLocation($nearest['id']);
+
+				return $nearest;
+
+			}
+
+
 	}
 
 	/**
