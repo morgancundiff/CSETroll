@@ -10,12 +10,12 @@ class UserController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function checkUsername($username)
+	public function checkUsername()
 	{
 	
 
 		
-		$return = User::checkUsername($username);
+		$return = User::checkUsername();
 
 		return $return;
 		//$user->scopeCheckUsername($username);
@@ -30,6 +30,15 @@ class UserController extends \BaseController {
 	{
 
 		return User::checkUserLogin();
+	}
+
+	/**
+	 * This function sends the reset password code to the user
+	 */
+
+	public function recoverPassword(){
+
+		return User::recoverPassword();
 	}
 
 	/**

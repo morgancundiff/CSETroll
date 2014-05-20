@@ -25,20 +25,21 @@ return array(
 			'username'			=> array("response" => array("result" => "fail", "message" => "must provide username")),
 			'username_exists'	=> array("response" => array("result" => "fail", "message" => "Username unavailable")),
 			'internal_error' 	=> array("response" => array("result" => "fail", "message" => "something went wrong")),
-			'updated_user' 		=> array("response" => array("result" => "fail", "message" => "user not updated successfuly")),
+			'updated_user' 		=> array("response" => array("result" => "fail", "message" => "user not updated successfully")),
 			'email_exists' 		=> array("response" => array("result" => "fail", "message" => "Cannot update, email is already in use")),
 			'location_id' 		=> array("response" => array("result" => "fail", "message" => "Location Id is required")),
 			'unknown_token' 	=> array("response" => array("result" => "fail", "message" => "Uknown user token")),
 			'invalid_token' 	=> array("response" => array("result" => "fail", "message" => "Invalid user token")),
-			'logged_out' 	=> array("response" => array("result" => "fail", "message" => "User is not logged in")),
+			'logged_out' 		=> array("response" => array("result" => "fail", "message" => "User is not logged in")),
+			'unknown_reset_code'=> array("response" => array("result" => "fail", "message" => "must provide reset code")),
 
 
 			),
 		'valid' => array(
 			'valid_username'	=> array("response" => array("result" => "success", "message" => "Username available")),
-			'created_user'		=> array("response" => array("result" => "success", "message" => "user created successfuly")),
-			'updated_user'		=> array("response" => array("result" => "success", "message" => "user updated successfuly")),
-			'user_delete'		=> array("response" => array("result" => "success", "message" => "user deleted successfuly")),
+			'created_user'		=> array("response" => array("result" => "success", "message" => "user created successfully")),
+			'updated_user'		=> array("response" => array("result" => "success", "message" => "user updated successfully")),
+			'user_delete'		=> array("response" => array("result" => "success", "message" => "user deleted successfully")),
 			),
 	),
 	'menu' => array(

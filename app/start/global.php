@@ -48,6 +48,7 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 
 App::error(function(Exception $exception, $code)
 {
+	//return Response::json(Lang::get('api.user.error.bad_request'));
 	Log::error($exception);
 });
 

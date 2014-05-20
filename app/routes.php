@@ -22,6 +22,7 @@ Route::pattern('uuid', '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]
 Route::pattern('base', '[a-zA-Z0-9]+');
 Route::pattern('slug', '[a-z0-9-]+');
 Route::pattern('username', '[a-z0-9_-]{3,16}');
+Route::pattern('ordering', '[a-z]{3,4}');
 
 Route::get('/', function()
 {
@@ -55,9 +56,9 @@ Route::any('/user/create/favorites/{item_id}', 'FavoritesController@createUserFa
 
 Route::any('/user/delete/favorites/{favorite_id}', 'FavoritesController@deleteUserFavorites'); //done
 
-//Route::any('/user/favorites', 'UserController@logInUser');
+Route::any('/user/recover', 'UserController@recoverPassword');
 
-Route::any('/user/recover', 'UserController@resetPassword');
+Route::any('/user/reset', 'UserController@resetPassword');
 
 //Route::any('/user/login', 'UserController@loginUser');
 
@@ -104,6 +105,14 @@ Route::any('/get/locations/nearest', 'LocationsController@getNearestLocation'); 
 */
 
 Route::any('/get/menu/{menu_id}', 'MenusController@getSingleMenu'); //done
+
+Route::any('/get/menu/{menu_id}/sort/category/{ordering}', 'MenusController@getSingleMenuByCategory');//done
+
+Route::any('/get/menu/{menu_id}/sort/price/{ordering}', 'MenusController@getSingleMenuByPrice');//done
+
+Route::any('/get/menu/{menu_id}/sort/title/{ordering}', 'MenusController@getSingleMenuByTitle');//done
+
+Route::any('/get/menu/{menu_id}/sort/rating', 'MenusController@getSingleMenuByRating'); //done
 
 Route::any('/ratings/{item_id}/{rating}', 'RatingsController@addRating'); //done - error checking needed
 

@@ -119,16 +119,17 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function scopeCheckUsername(string $username)
+	public function scopeCheckUsername()
 	{
+		$username = Request::segment(3);
 
 		try{
 			
-			Log::info('The username is ' , array("username" => $username));
+			//Log::info('The username is ' , array("username" => $username));
 			
 			$user = Sentry::findUserByLogin($username);
 
-			Log::info(Lang::get('api.user.error.username_exists'));
+			//Log::info(Lang::get('api.user.error.username_exists'));
 
 			return Response::json(Lang::get('api.user.error.username_exists'));
 
@@ -171,9 +172,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 				$presist_code = array_shift($presist_code);
 
-				echo $presist_code."\n";
+				//echo $presist_code."\n";
 
-				echo $user_token."\n";
+				//echo $user_token."\n";
 
 				try{
 
@@ -186,7 +187,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 				//$unhashed = array_shift($decyptedArray);
 
-				echo $decyptedArray;
+				//echo $decyptedArray;
 
 
 				if($decyptedArray == $presist_code){
@@ -194,13 +195,13 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 					$user = Sentry::login($user, false);
 					$user = Sentry::getUser();
 					$presist_code = User::getPresistCode($user->id)->first()->toArray();
-					$favorites = Favorite::getUserFavorites($user);
+					$favorites = Favorite::getUserFavorites($user->id)->get();
 
 					$responseArray = array(
 						"response"	=> array(
 								"result"		=> "success",
 								"user"			=> $user->toArray(),
-								"favorites" 	=> $favorites,
+								"favorites" 	=> $favorites->toArray(),
 								"presist_code" 	=> Crypt::encrypt($presist_code),
 
 							)
@@ -233,7 +234,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * This function sends the reset password code to the user
 	 */
 
-	public function scopeResetPassword(){
+	public function scopeRecoverPassword(){
 
 		$args = Input::all();
 		if ( ! Input::has('api_key') || (Input::get('api_key') !== Config::get('app.internalApiKey'))){
@@ -255,11 +256,91 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 				// Get the password reset code
 				$resetCode = $user->getResetPasswordCode();
 
+				//var_dump($resetCode);
+
+
 				// Now you can send this code to your user via email for example.
-				Mail::send('emails.auth.reminder', array(), function($message) {
-    			$message->to('shalomabitan@gmail.com', 'Shalom Abitan')->subject('Password Recovery');
-				});
+				// Mail::send('emails.auth.reminder', array(), function($message) {
+    // 			$message->to('shalomabitan@gmail.com', 'Shalom Abitan')->subject('Password Recovery');
+				// });
+
+				return Response::json($resetCode);
 			}
+			catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
+			{
+				//no such user, it is a bad request
+				return Response::json(Lang::get('api.user.error.bad_request'));
+			}
+
+		}
+	}
+
+
+			/**
+	 * This function sends the reset password code to the user
+	 */
+
+	public function scopeResetPassword(){
+
+		$args = Input::all();
+		if ( ! Input::has('api_key') || (Input::get('api_key') !== Config::get('app.internalApiKey'))){
+			//this checks that an API KEY is passed and valid
+			return Response::json(Lang::get('api.user.error.unknown_api'));
+
+		}else if(!Input::has('reset_code')){
+
+			return Response::json(Lang::get('api.user.error.unknown_reset_code'));
+
+		}else if(!Input::has('reset_password')){
+
+			return Response::json(Lang::get('api.user.error.password'));
+
+		}else{
+				$username = e(Input::get('username'));
+				$resetCode = e(Input::get('reset_code'));
+				$resetPassword = e(Input::get('reset_password'));
+			try{
+				// Find the user using the user id
+				$user = Sentry::findUserByLogin($username);
+
+				// Check if the reset password code is valid
+				if ($user->checkResetPasswordCode($resetCode))
+				{
+					// Attempt to reset the user password
+					if ($user->attemptResetPassword($resetCode, $resetPassword))
+					{
+						// Password reset passed then relog in and return
+						$user = Sentry::login($user, false);
+						$user = Sentry::getUser();
+						$presist_code = User::getPresistCode($user->id)->first()->toArray();
+						$favorites = Favorite::getUserFavorites($user->id)->get();
+
+						$responseArray = array(
+						"response"	=> array(
+								"result"		=> "success",
+								"user"			=> $user->toArray(),
+								"favorites" 	=> $favorites->toArray(),
+								"presist_code" 	=> Crypt::encrypt($presist_code),
+
+							)
+						);
+				
+						return Response::json($responseArray);
+						
+					}
+					else
+					{
+						// Password reset failed
+						return Response::json(Lang::get('api.user.error.bad_request'));
+						
+					}
+				}
+				else
+				{
+					// The provided password reset code is Invalid
+					return Response::json(Lang::get('api.user.error.bad_request'));
+				}
+			}			
 			catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 			{
 				//no such user, it is a bad request
@@ -297,9 +378,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 					'password' 	=> $password,
 					);
 
+				Log::info("the login credentials", array("creds" => $credentials));
     			// Try to authenticate the user
 				$user = Sentry::authenticate($credentials, false);
+
+				//after authenticating the user
+				Log::info("the login credentials", array("user" => $user));
 				$user = Sentry::getUser();
+				
 				$presist_code = User::getPresistCode($user->id)->first()->toArray();
 
 				$presist_code = array_shift($presist_code);
@@ -340,17 +426,18 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 			}
 			catch (Cartalyst\Sentry\Users\UserNotActivatedException $e)
 			{
-				echo 'User is not activated.';
+				return Response::json(Lang::get('api.user.error.bad_request'));
+			
 			}
 
 			// The following is only required if throttle is enabled
 			catch (Cartalyst\Sentry\Throttling\UserSuspendedException $e)
 			{
-				echo 'User is suspended.';
+				return Response::json(Lang::get('api.user.error.bad_request'));
 			}
 			catch (Cartalyst\Sentry\Throttling\UserBannedException $e)
 			{
-				echo 'User is banned.';
+				return Response::json(Lang::get('api.user.error.bad_request'));
 			}
 
 
@@ -384,6 +471,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 						//sanitize data first to prevent hacks
 						$username = e(Input::get('username'));
 						$password = e(Input::get('password'));
+
+						$first_name = (Input::has('first_name')) ?  e(Input::get('first_name')) : "" ;
+						$last_name = (Input::has('last_name')) ?  e(Input::get('last_name')) : "" ;
+
 						$email = e(Input::get('email'));
     					
     					// Create the user
@@ -391,6 +482,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 							'email' 	=> $email,
 							'username'  => $username,
 							'password'  => $password,
+							'first_name' => $first_name,
+							'last_name' => $last_name,
 							'activated' => true,
 							));
 
@@ -423,7 +516,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 					}
 					catch (Cartalyst\Sentry\Users\PasswordRequiredException $e)
 					{
-						return Response::json(Lang::get('api.user.error.bad_request'));
+						return Response::json(Lang::get('api.user.error.password'));
 					}
 					catch (Cartalyst\Sentry\Users\UserExistsException $e)
 					{
@@ -517,7 +610,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 						}
 						catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 						{
-							return Response::json(Lang::get('api.user.error.bad_request'));
+							return Response::json(Lang::get('api.user.error.username'));
 
 						}
 

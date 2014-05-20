@@ -24,6 +24,7 @@ class Location extends \Eloquent {
 
 		$locations = DB::table('locations')->get();
 		
+		
 		return $locations;
 	}
 

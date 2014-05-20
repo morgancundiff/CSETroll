@@ -19,37 +19,14 @@ class Menu extends \Eloquent {
         return $this->hasMany('Item');
     }
 
-	public function scopeAddRating(){
 
-		//get the menu id to check
-		$menu_id = Request::segment(2);
-
-		//get the item id to check
-		$menu_item = Request::segment(3);
-		//get the rating
-		$rating = Request::segment(4);
-
-		$menu = Menu::find($menu_id);
-
-		$menu = $menu->toArray();
-
-		$menuArray = json_decode($menu["menu"], true);
-
-		$array = array_dot($menuArray);
-
-		var_dump($menuArray);
-
-		var_dump($array);
-		
-		return "hello";
-	}
 
 	/**
 	 * This function will get the menu for a specific menu id
 	 * @param  [type] $menu_id [description]
 	 * @return [type]          [description]
 	 */
-	public function scopeGetMenu($query, $menu_id){
+	public function scopeGetMenu($query, $menu_id, $ordering, $orderingBy){
 
 			/*quite extensive datbase call*/
 
@@ -66,12 +43,11 @@ class Menu extends \Eloquent {
             	'items.description', 
             	'category.category', 
             	'ratings.rating',
-            	DB::raw('GROUP_CONCAT(CONCAT(\'{size:\', size.size_title,\', price:\',size.price, \'}\') ORDER BY size.price SEPARATOR \',\') as sizes')
+            	DB::raw('GROUP_CONCAT(CONCAT(\'{size:\', size.size_title,\',price:\',size.price, \'}\') ORDER BY size.price SEPARATOR \',\') as sizes')
             	)
             ->where('menus.id', '=', $menu_id)
             ->groupBy('items.id')
-            ->orderBy('items.id', 'asc');
-
+            ->orderBy($ordering, $orderingBy);
 
 /*
 SELECT items.id, 
