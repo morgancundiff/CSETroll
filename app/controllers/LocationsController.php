@@ -75,11 +75,12 @@ class LocationsController extends \BaseController {
 				$lat = e(Input::get('lat'));
 				$lng = e(Input::get('lng'));
 			
-				$nearest =  Location::getNearestLocation($lat, $lng)->first();
+				$nearest = Location::getNearestLocation($lat, $lng)->first();
 
-				//return Location::getSingleLocation($nearest['id']);
-
-				return $nearest;
+				if($nearest)
+					return $nearest;
+				else
+						return Response::json(array("result"=> "fail", "message" => "you are out of range from UCSD"));
 
 			}
 

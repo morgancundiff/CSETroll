@@ -32,7 +32,7 @@ class MenusController extends \BaseController {
 
 
 					//do error check if you ask for something that is not there
-					return Response::json($menu->toArray());
+					return Response::json(array("menu" => $menu->toArray()));
 
 				}else{
 
@@ -64,7 +64,7 @@ class MenusController extends \BaseController {
 
 
 					//do error check if you ask for something that is not there
-					return Response::json($menu->toArray());
+					return Response::json(array("menu" => $menu->toArray()));
 
 				}else{
 
@@ -96,7 +96,7 @@ class MenusController extends \BaseController {
 
 
 					//do error check if you ask for something that is not there
-					return Response::json($menu->toArray());
+					return Response::json(array("menu" => $menu->toArray()));
 
 				}else{
 
@@ -129,7 +129,7 @@ class MenusController extends \BaseController {
 
 
 					//do error check if you ask for something that is not there
-					return Response::json($menu->toArray());
+					return Response::json(array("menu" => $menu->toArray()));
 
 				}else{
 
@@ -162,7 +162,7 @@ class MenusController extends \BaseController {
 
 
 					//do error check if you ask for something that is not there
-					return Response::json($menu->toArray());
+					return Response::json(array("menu" => $menu->toArray()));
 
 				}else{
 
