@@ -26,7 +26,7 @@ class LocationsController extends \BaseController {
 
 			}else{
 
-				return Location::getAllLocations();
+				return Response::json(array("locations" => Location::getAllLocations()));
 
 			}
 	}

@@ -43,6 +43,7 @@ class Menu extends \Eloquent {
             	'items.description', 
             	'category.category', 
             	'ratings.rating',
+            	'ratings.total_votes',
             	//DB::raw('GROUP_CONCAT(CONCAT(\'size:\', size.size_title,\',price:\',size.price, \'\') ORDER BY size.price SEPARATOR \',\') as sizes')
             	DB::raw('CONCAT("[",
 GROUP_CONCAT(
