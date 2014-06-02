@@ -84,7 +84,7 @@ class ItemsTableSeeder extends Seeder {
                                         "menus_id" => 1,
                                         "category_id" => 1,
                                         "title" => "Cafe Latte",
-                                        "description" => "Esspresso & steamed milk, topped with creamy foam.",
+                                        "description" => "Either one or two shots of Espresso with the rest of the cup filled with steam milk topped with creamy foam",
                                         "ratings_id" => 8
                                 ),
                         array(
@@ -197,7 +197,275 @@ class ItemsTableSeeder extends Seeder {
                                         "description" => "White Chocolate Mocha: Espresso, steamed milk & Ghiradelli white chocolate, topped with whipped cream on ice",
                                         "ratings_id" => 21
                                 ), 
+                        
+                        /*Begin of next Menu id number 4 which corresponds with Cups*/
+                          array(
+                                        "id" => 401,
+                                        "menus_id" => 4,
+                                        "category_id" => 1,
+                                        "title" => "Espresso",
+                                        "description" => "Concentrated drink consisting of ground coffee and hot water.  A shot is commonly used to measure espresso which each shot consisting of one ounce of espresso.",
+                                        "ratings_id" => 401
+                                ),
+                                
+                          array(
+                                        "id" => 402,
+                                        "menus_id" => 4,
+                                        "category_id" => 1,
+                                        "title" => "Americano",
+                                        "description" => "1/3 part Espresso and 2/3 parts hot water.  The water adds volume (decreasing concentration) to the caffeine.",
+                                        "ratings_id" => 402
+                                ), 
+                                
+                           array(
+                                        "id" => 403,
+                                        "menus_id" => 4,
+                                        "category_id" => 1,
+                                        "title" => "Hammerhead",
+                                        "description" => "A shot of Espresso in a cup of hot coffee- serious medicine! (can also be called a red eye)",
+                                        "ratings_id" => 403
+                                ),
+                        array(
+                                        "id" => 404,
+                                        "menus_id" => 4,
+                                        "category_id" => 1,
+                                        "title" => "Cappuccino",
+                                        "description" => "1/3 espresso, 1/3 steamed milk, and 1/3 frothed milk or microfoam though some places choose to add more milk to increase volume",
+                                        "ratings_id" => 404
+                                ),
 
+                        array(
+                                        "id" => 405,
+                                        "menus_id" => 4,
+                                        "category_id" => 1,
+                                        "title" => "Latte",
+                                        "description" => "Either one or two shots of Espresso with the rest of the cup filled with steam milk topped with creamy foam",
+                                        "ratings_id" => 405
+                                ),
+                      array(
+                                        "id" => 406,
+                                        "menus_id" => 4,
+                                        "category_id" => 1,
+                                        "title" => "Caramel Macchiato",
+                                        "description" => "",
+                                        "ratings_id" => 406
+                                ),
+                      array(
+                                        "id" => 407,
+                                        "menus_id" => 4,
+                                        "category_id" => 1,
+                                        "title" => "Flavored Latte",
+                                        "description" => "",
+                                        "ratings_id" => 407
+                                ),                                
+                      array(
+                                        "id" => 408,
+                                        "menus_id" => 4,
+                                        "category_id" => 1,
+                                        "title" => "Caffe Mocha",
+                                        "description" => "",
+                                        "ratings_id" => 408
+                                ),
+                      array(
+                                        "id" => 409,
+                                        "menus_id" => 4,
+                                        "category_id" => 1,
+                                        "title" => "Flavored Mocha",
+                                        "description" => "",
+                                        "ratings_id" => 409
+                                ),
+                      array(
+                                        "id" => 410,
+                                        "menus_id" => 4,
+                                        "category_id" => 1,
+                                        "title" => "Mexican Mocha",
+                                        "description" => "",
+                                        "ratings_id" => 410
+                                ),
+                      array(
+                                        "id" => 411,
+                                        "menus_id" => 4,
+                                        "category_id" => 1,
+                                        "title" => "Mocha Blanca",
+                                        "description" => "",
+                                        "ratings_id" => 411
+                                ),                                
+                      array(
+                                        "id" => 412,
+                                        "menus_id" => 4,
+                                        "category_id" => 1,
+                                        "title" => "The Dirty Chai",
+                                        "description" => "",
+                                        "ratings_id" => 412
+                                ),                                
+                      array(
+                                        "id" => 413,
+                                        "menus_id" => 4,
+                                        "category_id" => 1,
+                                        "title" => "Coffee",
+                                        "description" => "",
+                                        "ratings_id" => 413
+                                ),
+                      array(
+                                        "id" => 414,
+                                        "menus_id" => 4,
+                                        "category_id" => 3,
+                                        "title" => "Iced Coffee",
+                                        "description" => "",
+                                        "ratings_id" => 414
+                                ),  
+                      array(
+                                        "id" => 415,
+                                        "menus_id" => 4,
+                                        "category_id" => 1,
+                                        "title" => "Cafe au Lait",
+                                        "description" => "",
+                                        "ratings_id" => 415
+                                ),
+                      array(
+                                        "id" => 416,
+                                        "menus_id" => 4,
+                                        "category_id" => 3,
+                                        "title" => "The Granite Bear",
+                                        "description" => "",
+                                        "ratings_id" => 416
+                                ),
+                      array(
+                                        "id" => 417,
+                                        "menus_id" => 4,
+                                        "category_id" => 3,
+                                        "title" => "The Chai Frappe",
+                                        "description" => "",
+                                        "ratings_id" => 417
+                                ), 
+                      array(
+                                        "id" => 418,
+                                        "menus_id" => 4,
+                                        "category_id" => 3,
+                                        "title" => "Icce Latte or Mocha",
+                                        "description" => "",
+                                        "ratings_id" => 418
+                                ),                                
+                      array(
+                                        "id" => 419,
+                                        "menus_id" => 4,
+                                        "category_id" => 3,
+                                        "title" => "Vietnamese Coffee",
+                                        "description" => "",
+                                        "ratings_id" => 419
+                                ),
+                      array(
+                                        "id" => 420,
+                                        "menus_id" => 4,
+                                        "category_id" => 3,
+                                        "title" => "Hazelnut Coffee Shake",
+                                        "description" => "",
+                                        "ratings_id" => 420
+                                ),                                
+                      array(
+                                        "id" => 421,
+                                        "menus_id" => 4,
+                                        "category_id" => 3,
+                                        "title" => "The Cap-banana Shake",
+                                        "description" => "",
+                                        "ratings_id" => 421
+                                ),
+                      array(
+                                        "id" => 422,
+                                        "menus_id" => 4,
+                                        "category_id" => 3,
+                                        "title" => "Chocolate Chip Frappe",
+                                        "description" => "",
+                                        "ratings_id" => 422
+                                ),
+                      array(
+                                        "id" => 423,
+                                        "menus_id" => 4,
+                                        "category_id" => 3,
+                                        "title" => "Heath Bar or Reeses' Freeze",
+                                        "description" => "",
+                                        "ratings_id" => 423
+                                ),
+                      array(
+                                        "id" => 424,
+                                        "menus_id" => 4,
+                                        "category_id" => 3,
+                                        "title" => "Chilled Green Tea Frappe",
+                                        "description" => "",
+                                        "ratings_id" => 424
+                                ),
+                      array(
+                                        "id" => 426,
+                                        "menus_id" => 4,
+                                        "category_id" => 2,
+                                        "title" => "Teas",
+                                        "description" => "",
+                                        "ratings_id" => 426
+                                ),
+                      array(
+                                        "id" => 427,
+                                        "menus_id" => 4,
+                                        "category_id" => 2,
+                                        "title" => "Tea Latte",
+                                        "description" => "",
+                                        "ratings_id" => 427
+                                ),
+                      array(
+                                        "id" => 428,
+                                        "menus_id" => 4,
+                                        "category_id" => 2,
+                                        "title" => "Hot Chai Latte",
+                                        "description" => "",
+                                        "ratings_id" => 428
+                                ),
+                      array(
+                                        "id" => 429,
+                                        "menus_id" => 4,
+                                        "category_id" => 2,
+                                        "title" => "Steamer",
+                                        "description" => "",
+                                        "ratings_id" => 429
+                                ),
+                      array(
+                                        "id" => 430,
+                                        "menus_id" => 4,
+                                        "category_id" => 2,
+                                        "title" => "Hot Chocolate",
+                                        "description" => "",
+                                        "ratings_id" => 430
+                                ),
+                      array(
+                                        "id" => 431,
+                                        "menus_id" => 4,
+                                        "category_id" => 2,
+                                        "title" => "Hot White/Mexican Chocolate",
+                                        "description" => "",
+                                        "ratings_id" => 431
+                                ),                                
+                      array(
+                                        "id" => 432,
+                                        "menus_id" => 4,
+                                        "category_id" => 2,
+                                        "title" => "Italian Soda/Cremosa",
+                                        "description" => "",
+                                        "ratings_id" => 432
+                                ),
+                      array(
+                                        "id" => 433,
+                                        "menus_id" => 4,
+                                        "category_id" => 2,
+                                        "title" => "Iced Tea",
+                                        "description" => "",
+                                        "ratings_id" => 433
+                                ),
+                      array(
+                                        "id" => 434,
+                                        "menus_id" => 4,
+                                        "category_id" => 2,
+                                        "title" => "Iced Chai Latte",
+                                        "description" => "",
+                                        "ratings_id" => 434
+                                ),
                 ));
 
 	}
