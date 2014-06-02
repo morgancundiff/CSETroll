@@ -12,10 +12,17 @@ class Location extends \Eloquent {
 
 	protected $fillable = [];
 
+
+	/**
+	 * return the menu id if one is associated with the location
+	 * or
+	 * return the menu associated with the location
+	 */
 	public function menu(){
 
-        return $this->hasOne('Menu', 'menus_id');
-    }
+        	return $this->hasOne('Menu', 'menus_id');
+    	}
+    	
 	/**
 	 * return all the locations in database
 	 * @return [type] [description]
@@ -28,6 +35,10 @@ class Location extends \Eloquent {
 		return $locations;
 	}
 
+	/**
+	 * Query the API for a single location using a known id.
+	 * Return the location object if found.
+	 */
 	public function scopeGetSingleLocation($query, $location_id){
 
 		try
