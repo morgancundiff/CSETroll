@@ -1142,7 +1142,7 @@ class ItemsTableSeeder extends Seeder {
                                         "menus_id" => 4,
                                         "category_id" => 3,
                                         "title" => "The Chai Frappe",
-                                        "description" => "",
+                                        "description" => "A blend of Spiced Chai and ice cream, topped with whipped cream",
                                         "ratings_id" => 138
                                 ), 
                       array(
@@ -1158,7 +1158,7 @@ class ItemsTableSeeder extends Seeder {
                                         "menus_id" => 4,
                                         "category_id" => 3,
                                         "title" => "Vietnamese Coffee",
-                                        "description" => "",
+                                        "description" => "Espresso blended with sweetened condensed milk over ice",
                                         "ratings_id" => 140
                                 ),
                       array(
@@ -1166,7 +1166,7 @@ class ItemsTableSeeder extends Seeder {
                                         "menus_id" => 4,
                                         "category_id" => 3,
                                         "title" => "Hazelnut Coffee Shake",
-                                        "description" => "",
+                                        "description" => "A lo-fat treat: hazelnut and vanilla blended with espresso and ice cream.  Topped with whipped cream",
                                         "ratings_id" => 141
                                 ),                                
                       array(
@@ -1174,7 +1174,7 @@ class ItemsTableSeeder extends Seeder {
                                         "menus_id" => 4,
                                         "category_id" => 3,
                                         "title" => "The Cap-banana Shake",
-                                        "description" => "",
+                                        "description" => "A fresh 1/2 banana, blended with chocolate espresso, and lo-fat ice cream.  Topped with whipped cream",
                                         "ratings_id" => 142
                                 ),
                       array(
@@ -1182,7 +1182,7 @@ class ItemsTableSeeder extends Seeder {
                                         "menus_id" => 4,
                                         "category_id" => 3,
                                         "title" => "Chocolate Chip Frappe",
-                                        "description" => "",
+                                        "description" => "The Granite Bear (blended espresso and ice cream) blended with a handful of Ghiradelli chocolate chips",
                                         "ratings_id" => 143
                                 ),
                       array(
@@ -1190,7 +1190,7 @@ class ItemsTableSeeder extends Seeder {
                                         "menus_id" => 4,
                                         "category_id" => 3,
                                         "title" => "Heath Bar or Reeses' Freeze",
-                                        "description" => "",
+                                        "description" => "You guessed it.  The famous Granite Bear (blended espresso and ice cream)with not one but two Heath Bars or peanut butter cups",
                                         "ratings_id" => 144
                                 ),
                       array(
@@ -1198,7 +1198,7 @@ class ItemsTableSeeder extends Seeder {
                                         "menus_id" => 4,
                                         "category_id" => 3,
                                         "title" => "Chilled Green Tea Frappe",
-                                        "description" => "",
+                                        "description" => "A blended sweetened motcha green tea, milk and ice.  Topped with whipped cream",
                                         "ratings_id" => 145
                                 ),
                       array(
@@ -1222,7 +1222,7 @@ class ItemsTableSeeder extends Seeder {
                                         "menus_id" => 4,
                                         "category_id" => 2,
                                         "title" => "Hot Chai Latte",
-                                        "description" => "",
+                                        "description" => "Spiced, Vanilla, Decaf or Green Tea.  A delicious blend of darjeeling tea, cinammon, cardamom, honey and non-fat milk",
                                         "ratings_id" => 148
                                 ),
                       array(
@@ -1230,7 +1230,7 @@ class ItemsTableSeeder extends Seeder {
                                         "menus_id" => 4,
                                         "category_id" => 2,
                                         "title" => "Steamer",
-                                        "description" => "",
+                                        "description" => "Made with steamed milk and our favorites syrup",
                                         "ratings_id" => 149
                                 ),
                       array(
@@ -1238,7 +1238,7 @@ class ItemsTableSeeder extends Seeder {
                                         "menus_id" => 4,
                                         "category_id" => 2,
                                         "title" => "Hot Chocolate",
-                                        "description" => "",
+                                        "description" => "Made with steamed milk chocolate and whipped cream",
                                         "ratings_id" => 150
                                 ),
                       array(
@@ -1246,7 +1246,7 @@ class ItemsTableSeeder extends Seeder {
                                         "menus_id" => 4,
                                         "category_id" => 2,
                                         "title" => "Hot White/Mexican Chocolate",
-                                        "description" => "",
+                                        "description" => "white heat cocao powder, or mexican chocolate steamed with milk and topped with whipped cream",
                                         "ratings_id" => 151
                                 ),                                
                       array(
@@ -1254,7 +1254,7 @@ class ItemsTableSeeder extends Seeder {
                                         "menus_id" => 4,
                                         "category_id" => 2,
                                         "title" => "Italian Soda/Cremosa",
-                                        "description" => "",
+                                        "description" => "Sparkling mineral water, flavored with Italian syrup served over ice.  Favorites include raspberry, peach, lime, mandarim orange and employee favorite the Strawberry Angle (strawberry and coconut with a dash of cream)",
                                         "ratings_id" => 152
                                 ),
                       array(
@@ -1262,7 +1262,7 @@ class ItemsTableSeeder extends Seeder {
                                         "menus_id" => 4,
                                         "category_id" => 2,
                                         "title" => "Iced Tea",
-                                        "description" => "",
+                                        "description" => "Fresh Brewed, Awake and Passion Tea Combo",
                                         "ratings_id" => 153
                                 ),
                       array(
