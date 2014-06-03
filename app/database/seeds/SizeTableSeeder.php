@@ -1869,6 +1869,258 @@ class SizeTableSeeder extends Seeder {
                                         "size_title" => "Grande (16 Oz.)",
                                         "price" => 3.25
                                 ),
+                        array(
+                                        "id" => 299,
+                                        "items_id" => 134,
+                                        "size_title" => "12 Oz.",
+                                        "price" => 1.25
+                                ),
+                        array(
+                                        "id" => 300,
+                                        "items_id" => 134,
+                                        "size_title" => "16 Oz.",
+                                        "price" => 1.50
+                                ),   
+                        array(
+                                        "id" => 301,
+                                        "items_id" => 134,
+                                        "size_title" => "20 Oz.",
+                                        "price" => 1.75
+                                ),
+                        array(
+                                        "id" => 302,
+                                        "items_id" => 135,
+                                        "size_title" => "12 Oz.",
+                                        "price" => 1.50
+                                ),   
+                        array(
+                                        "id" => 303,
+                                        "items_id" => 135,
+                                        "size_title" => "20 Oz.",
+                                        "price" => 2.00
+                                ),
+                        array(
+                                        "id" => 304,
+                                        "items_id" => 136,
+                                        "size_title" => "12 Oz."
+                                        "price" => 1.50
+                                ),
+                        array(
+                                        "id" => 305,
+                                        "items_id" => 136,
+                                        "size_title" => "16 Oz.",
+                                        "price" => 1.75
+                                ),   
+                        array(
+                                        "id" => 306,
+                                        "items_id" => 136,
+                                        "size_title" => "20 Oz.",
+                                        "price" => 2.00
+                                ),
+                         array(
+                                        "id" => 307,
+                                        "items_id" => 137,
+                                        "size_title" => "Single (16 Oz.)",
+                                        "price" => 3.25
+                                ),
+                        array(
+                                        "id" => 308,
+                                        "items_id" => 137,
+                                        "size_title" => "Double (20 Oz.)",
+                                        "price" => 3.75
+                                ),   
+                         array(
+                                        "id" => 309,
+                                        "items_id" => 138,
+                                        "size_title" => "Single (16 Oz.)",
+                                        "price" => 3.25
+                                ),
+                        array(
+                                        "id" => 310,
+                                        "items_id" => 138,
+                                        "size_title" => "Double (20 Oz.)",
+                                        "price" => 3.75
+                                ), 
+                         array(
+                                        "id" => 311,
+                                        "items_id" => 139,
+                                        "size_title" => "Single (16 Oz.)",
+                                        "price" => 3.00
+                                ),
+                        array(
+                                        "id" => 312,
+                                        "items_id" => 139,
+                                        "size_title" => "Double (20 Oz.)",
+                                        "price" => 3.50
+                                ), 
+                        array(
+                                        "id" => 313,
+                                        "items_id" => 140,
+                                        "size_title" => "Double (20 Oz.)",
+                                        "price" => 3.25
+                                ),                                 
+                         array(
+                                        "id" => 314,
+                                        "items_id" => 141,
+                                        "size_title" => "Single (16 Oz.)",
+                                        "price" => 3.25
+                                ),
+                        array(
+                                        "id" => 315,
+                                        "items_id" => 141,
+                                        "size_title" => "Double (20 Oz.)",
+                                        "price" => 3.75
+                                ), 
+                         array(
+                                        "id" => 316,
+                                        "items_id" => 142,
+                                        "size_title" => "Single (16 Oz.)",
+                                        "price" => 3.50
+                                ),
+                        array(
+                                        "id" => 317,
+                                        "items_id" => 142,
+                                        "size_title" => "Double (20 Oz.)",
+                                        "price" => 4.00
+                                ), 
+                         array(
+                                        "id" => 318,
+                                        "items_id" => 143,
+                                        "size_title" => "Single (16 Oz.)",
+                                        "price" => 3.50
+                                ),
+                        array(
+                                        "id" => 319,
+                                        "items_id" => 143,
+                                        "size_title" => "Double (20 Oz.)",
+                                        "price" => 4.00
+                                ),  
+                         array(
+                                        "id" => 320,
+                                        "items_id" => 144,
+                                        "size_title" => "Single (16 Oz.)",
+                                        "price" => 4.00
+                                ),
+                        array(
+                                        "id" => 321,
+                                        "items_id" => 144,
+                                        "size_title" => "Double (20 Oz.)",
+                                        "price" => 4.50
+                                ),  
+                         array(
+                                        "id" => 322,
+                                        "items_id" => 145,
+                                        "size_title" => "Single (16 Oz.)",
+                                        "price" => 3.75
+                                ),
+                        array(
+                                        "id" => 323,
+                                        "items_id" => 145,
+                                        "size_title" => "Double (20 Oz.)",
+                                        "price" => 4.25
+                                ), 
+                         array(
+                                        "id" => 324,
+                                        "items_id" => 146,
+                                        "size_title" => "12 Oz.",
+                                        "price" => 1.00
+                                ),
+                        array(
+                                        "id" => 325,
+                                        "items_id" => 146,
+                                        "size_title" => "16 Oz.",
+                                        "price" => 1.25
+                                ), 
+                         array(
+                                        "id" => 326,
+                                        "items_id" => 147,
+                                        "size_title" => "12 Oz.",
+                                        "price" => 1.50
+                                ),
+                        array(
+                                        "id" => 327,
+                                        "items_id" => 147,
+                                        "size_title" => "16 Oz.",
+                                        "price" => 1.75
+                                ), 
+                         array(
+                                        "id" => 328,
+                                        "items_id" => 148,
+                                        "size_title" => "12 Oz.",
+                                        "price" => 2.50
+                                ),
+                        array(
+                                        "id" => 329,
+                                        "items_id" => 148,
+                                        "size_title" => "16 Oz.",
+                                        "price" => 3.00
+                                ), 
+                          array(
+                                        "id" => 330,
+                                        "items_id" => 149,
+                                        "size_title" => "12 Oz.",
+                                        "price" => 1.75
+                                ),
+                        array(
+                                        "id" => 331,
+                                        "items_id" => 149,
+                                        "size_title" => "16 Oz.",
+                                        "price" => 2.00
+                                ), 
+                         array(
+                                        "id" => 332,
+                                        "items_id" => 150,
+                                        "size_title" => "12 Oz.",
+                                        "price" => 2.00
+                                ),
+                        array(
+                                        "id" => 333,
+                                        "items_id" => 150,
+                                        "size_title" => "16 Oz.",
+                                        "price" => 2.50
+                                ), 
+                         array(
+                                        "id" => 334,
+                                        "items_id" => 151,
+                                        "size_title" => "12 Oz.",
+                                        "price" => 2.25
+                                ),
+                        array(
+                                        "id" => 335,
+                                        "items_id" => 151,
+                                        "size_title" => "16 Oz.",
+                                        "price" => 2.75
+                                ), 
+                         array(
+                                        "id" => 336,
+                                        "items_id" => 152,
+                                        "size_title" => "16 Oz.",
+                                        "price" => 2.50
+                                ),
+                        array(
+                                        "id" => 337,
+                                        "items_id" => 152,
+                                        "size_title" => "20 Oz.",
+                                        "price" => 3.00
+                                ), 
+                         array(
+                                        "id" => 338,
+                                        "items_id" => 153,
+                                        "size_title" => "16 Oz.",
+                                        "price" => 1.50
+                                ),
+                        array(
+                                        "id" => 339,
+                                        "items_id" => 153,
+                                        "size_title" => "20 Oz.",
+                                        "price" => 2.00
+                                ), 
+                        array(
+                                        "id" => 340,
+                                        "items_id" => 154,
+                                        "size_title" => "20 Oz.",
+                                        "price" => 3.00
+                                ),  
                 ));
 	}
 
