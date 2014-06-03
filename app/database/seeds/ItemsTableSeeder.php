@@ -1134,7 +1134,7 @@ class ItemsTableSeeder extends Seeder {
                                         "menus_id" => 4,
                                         "category_id" => 3,
                                         "title" => "The Granite Bear",
-                                        "description" => "",
+                                        "description" => "Specialized Ultimate Espresso blended with lo-fat chocolate ice milk, topped with whipped cream",
                                         "ratings_id" => 137
                                 ),
                       array(
