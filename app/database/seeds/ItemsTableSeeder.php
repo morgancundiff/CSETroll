@@ -197,8 +197,155 @@ class ItemsTableSeeder extends Seeder {
                                         "description" => "White Chocolate Mocha: Espresso, steamed milk & Ghiradelli white chocolate, topped with whipped cream on ice",
                                         "ratings_id" => 21
                                 ), 
+                                
                         
-                        /*Begin of next Menu id number 4 which corresponds with Cups*/
+                        /*Beginning of next Menu id number 2 which corresponds with Art of Espresso*/
+                        array(
+                                        "id" => 22,
+                                        "menus_id" => 2,
+                                        "category_id" => 1,
+                                        "title" => "Espresso",
+                                        "description" => "Concentrated drink consisting of ground coffee and hot water.  A shot is commonly used to measure espresso which each shot consisting of one ounce of espresso.",
+                                        "ratings_id" => 22
+                                ),                        
+                        array(
+                                        "id" => 23,
+                                        "menus_id" => 2,
+                                        "category_id" => 1,
+                                        "title" => "Americano",
+                                        "description" => "1/3 part Espresso and 2/3 parts hot water.  The water adds volume (decreasing concentration) to the caffeine.",
+                                        "ratings_id" => 23
+                                ),
+                        array(
+                                        "id" => 24,
+                                        "menus_id" => 2,
+                                        "category_id" => 1,
+                                        "title" => "Macchiato",
+                                        "description" => "Espresso with a dollop of foam",
+                                        "ratings_id" => 24
+                                ), 
+                        array(
+                                        "id" => 25,
+                                        "menus_id" => 2,
+                                        "category_id" => 1,
+                                        "title" => "Cappuccino",
+                                        "description" => "1/3 espresso, 1/3 steamed milk, and 1/3 frothed milk or microfoam though some places choose to add more milk to increase volume",
+                                        "ratings_id" => 25
+                                ),
+                        array(
+                                        "id" => 26,
+                                        "menus_id" => 2,
+                                        "category_id" => 1,
+                                        "title" => "Shot in the Dark",
+                                        "description" => "Sindle or double shot of espresso in fresh brewwed organic coffee",
+                                        "ratings_id" => 26
+                                ),            
+                        array(
+                                        "id" => 27,
+                                        "menus_id" => 2,
+                                        "category_id" => 1,
+                                        "title" => "Latte",
+                                        "description" => "Either one or two shots of Espresso poured over steamed milk with a bunch of foam",
+                                        "ratings_id" => 27
+                                ), 
+                        array(
+                                        "id" => 28,
+                                        "menus_id" => 2,
+                                        "category_id" => 1,
+                                        "title" => "Flavored Latte",
+                                        "description" => "Latte (Espresso poured of steamed milk with foam) with an added shot of your favorite flavor (vanilla, hazelnut, caramel etc.)",
+                                        "ratings_id" => 28
+                                ), 
+                        array(
+                                        "id" => 29,
+                                        "menus_id" => 2,
+                                        "category_id" => 1,
+                                        "title" => "Caramel Macchiato",
+                                        "description" => "Espresso in steamed vanilla milk with whipped cream and caramel drizzle",
+                                        "ratings_id" => 29
+                                ),  
+                        array(
+                                        "id" => 30,
+                                        "menus_id" => 2,
+                                        "category_id" => 1,
+                                        "title" => "Caffe Mocha",
+                                        "description" => "Espresso poured into steamed chocolate milk topped with whipped cream",
+                                        "ratings_id" =>30
+                                ),                                
+                        array(
+                                        "id" => 31,
+                                        "menus_id" => 2,
+                                        "category_id" => 1,
+                                        "title" => "Mint Mocha",
+                                        "description" => "Caffe mocha with a splash of peppermint topped with whipped cream",
+                                        "ratings_id" => 31
+                                ),
+                        array(
+                                        "id" => 32,
+                                        "menus_id" => 2,
+                                        "category_id" => 1,
+                                        "title" => "Mexican Mocha",
+                                        "description" => "Caffe mocha made with Iberra chocolate topped with whipped cream",
+                                        "ratings_id" => 32
+                                ), 
+                        array(
+                                        "id" => 33,
+                                        "menus_id" => 2,
+                                        "category_id" => 1,
+                                        "title" => "White Chocolate Mocha",
+                                        "description" => "White Ghiradelli chocolate blended with espresso topped with whipped cream",
+                                        "ratings_id" => 33
+                                ),                                
+                         array(
+                                        "id" => 34,
+                                        "menus_id" => 2,
+                                        "category_id" => 3,
+                                        "title" => "Blended Bliss",
+                                        "description" => "Espresso, chocolate, lowfat ice milk blended into a refreshing shake.  Topped with whipped cream.  Delicious!",
+                                        "ratings_id" => 34
+                                ),
+                  array(
+                                        "id" => 35,
+                                        "menus_id" => 2,
+                                        "category_id" => 3,
+                                        "title" => "Java Chill (Flavored)",
+                                        "description" => "Brewed Espresso, lowfat ice milk blended with a shot of flavor (hazelnut, vanilla, caramel, etc.) topped with whipped cream.",
+                                        "ratings_id" => 35
+                                ),  
+                  array(
+                                        "id" => 36,
+                                        "menus_id" => 2,
+                                        "category_id" => 3,
+                                        "title" => "White Mocha Chill",
+                                        "description" => "Blended Ghiradelli white chocolate mocha capped with whipped cream",
+                                        "ratings_id" => 36
+                                ),  
+                  array(
+                                        "id" => 37,
+                                        "menus_id" => 2,
+                                        "category_id" => 3,
+                                        "title" => "Malty-Malt",
+                                        "description" => "Blended chocolate mocha with melted milk topped with whipped cream",
+                                        "ratings_id" => 37
+                                ),    
+                  array(
+                                        "id" => 38,
+                                        "menus_id" => 2,
+                                        "category_id" => 3,
+                                        "title" => "Spun Monkey",
+                                        "description" => "Blended chocolate mocha spun with a whole banana topped with whipped cream",
+                                        "ratings_id" => 38
+                                ),
+                  array(
+                                        "id" => 39,
+                                        "menus_id" => 2,
+                                        "category_id" => 3,
+                                        "title" => "Chocolate Chip Chill",
+                                        "description" => "Cold caffe mocha blended with a scopp of Ghiradelli dark chocolate chips",
+                                        "ratings_id" => 39
+                                ),                                       
+                        
+                        /*Beginning of next Menu id number 4 which corresponds with Cups*/
                           array(
                                         "id" => 401,
                                         "menus_id" => 4,
